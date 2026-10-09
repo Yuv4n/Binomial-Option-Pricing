@@ -16,6 +16,14 @@ Python 3, from this folder:
 python3 "Binomial Option Pricing.py"
 ```
 
-Edit the calls at the bottom to try other inputs. There is no CLI argument parser or CSV ingestion; the pandas idea in the source is only a comment.
+Edit the calls under `if __name__ == "__main__":` at the bottom to try other inputs, or import `option` from the module. There is no CLI argument parser or CSV ingestion; the pandas idea in the source is only a comment.
 
 The routine validates its inputs (option kind, positive T, S, K, sigma, integer n, and a no-arbitrage check on the up probability). Discounting uses the risk-free rate `r` (the dividend yield `q` only enters the risk-neutral probability), and early exercise is checked according to the option kind (call or put).
+
+## Tests
+
+```sh
+python3 -m unittest -v
+```
+
+The tests (`test_option.py`) check the four textbook examples, convergence to Black–Scholes, put–call parity, American ≥ European, American call = European call when there are no dividends, and input validation.

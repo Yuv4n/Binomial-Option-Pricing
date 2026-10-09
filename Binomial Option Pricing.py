@@ -66,18 +66,19 @@ def option(T, S, K, r, sigma, n, q, type, option):
 
         return fList[n][0]
 
-#   Ex 13.3
-print(option(0.75, 31, 30, 0.05, 0.3, 3, 0, "American", "Call")) #Exp Result 4.49
+if __name__ == "__main__":
+    #   Ex 13.3
+    print(option(0.75, 31, 30, 0.05, 0.3, 3, 0, "American", "Call")) #Exp Result 4.49
 
-#   Ex 13.10
-print(option(2, 50, 52, 0.05, 0.3, 2, 0, "American", "Put")) #Exp Result 7.43
+    #   Ex 13.10
+    print(option(2, 50, 52, 0.05, 0.3, 2, 0, "American", "Put")) #Exp Result 7.43
 
-#   Ex 13.1
-print(option(0.5, 810, 800, 0.05, 0.2, 2, 0.02, "European", "Call")) #Exp Result 53.39
+    #   Ex 13.1
+    print(option(0.5, 810, 800, 0.05, 0.2, 2, 0.02, "European", "Call")) #Exp Result 53.39
 
-#   Ex 13.7
-print(option(2, 50, 52, 0.05, 0.2, 2, 0.02, "European", "Put")) #Exp Result 4.66
+    #   Ex 13.7
+    print(option(2, 50, 52, 0.05, 0.2, 2, 0.02, "European", "Put")) #Exp Result 4.66
 
-#   For real world application we could create a CSV file with data in the required form, and read the file 
-#   with pandas to create a database with the relevant data in the correct form, and pass as arguments into 
-#   function with a simple function, to handle large quantities of data at once.
+    #   For real world application we could create a CSV file with data in the required form, and read the file 
+    #   with pandas to create a database with the relevant data in the correct form, and pass as arguments into 
+    #   function with a simple function, to handle large quantities of data at once.
