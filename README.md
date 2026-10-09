@@ -4,6 +4,10 @@ A Python exercise in pricing European and American calls and puts with a binomia
 
 It uses only `math`. Inputs cover expiry and spot price, with strike, rates and volatility supplied as function arguments. Four included examples reproduce the textbook values 4.49, 7.43, 53.39 and 4.66, matching an independent backward-induction reference.
 
+## Slides
+
+`Binomial Option Pricing.pptx` is the accompanying presentation (theory, worked examples and the implementation walkthrough).
+
 ## Run the examples
 
 Python 3, from this folder:
