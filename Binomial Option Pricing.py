@@ -8,14 +8,24 @@ def option(T, S, K, r, sigma, n, q, type, option):
     #  sigma volatility of the stock price
     #  n number of intervals
     #  q dividend yield
-    #  European or American
-    #  Call, Put
+    #  type: "European" or "American"
+    #  option: "Call" or "Put"
+
+    #   Input validation
+    if type not in ("European", "American"):
+        raise ValueError("type must be 'European' or 'American'")
+    if option not in ("Call", "Put"):
+        raise ValueError("option must be 'Call' or 'Put'")
+    if T <= 0 or S <= 0 or K <= 0 or sigma <= 0 or n < 1 or int(n) != n:
+        raise ValueError("T, S, K, sigma must be positive and n a positive integer")
 
     #   Defining Variables
     deltaT = T/n 
     up = math.exp(sigma * math.sqrt(deltaT))
     p0 = (up * math.exp((r-q)*deltaT) - 1 ) / (up**2 - 1)
     p1 = 1 - p0
+    if not 0 <= p0 <= 1:
+        raise ValueError("arbitrage: risk-neutral probability outside [0, 1]; increase n or check r, q, sigma")
     fList = []
     f = 0
 

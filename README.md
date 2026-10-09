@@ -14,4 +14,4 @@ python3 "Binomial Option Pricing.py"
 
 Edit the calls at the bottom to try other inputs. There is no CLI argument parser or CSV ingestion; the pandas idea in the source is only a comment.
 
-The routine has no input validation. Discounting uses the risk-free rate `r` (the dividend yield `q` only enters the risk-neutral probability), and early exercise is checked according to the option kind (call or put).
+The routine validates its inputs (option kind, positive T, S, K, sigma, integer n, and a no-arbitrage check on the up probability). Discounting uses the risk-free rate `r` (the dividend yield `q` only enters the risk-neutral probability), and early exercise is checked according to the option kind (call or put).
