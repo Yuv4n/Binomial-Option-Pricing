@@ -1,29 +1,20 @@
 # Binomial option pricing
 
-A Python exercise in pricing European and American calls and puts with a binomial tree. The `option()` function constructs terminal payoffs. European prices use a weighted terminal sum; American prices work backwards through the tree and compare continuation with early exercise.
+A Python binomial-tree pricer for European and American calls and puts, with a slide deck covering theory and a worked walkthrough.
 
-It uses only `math`. Inputs cover expiry and spot price, with strike, rates and volatility supplied as function arguments. Four included examples reproduce the textbook values 4.49, 7.43, 53.39 and 4.66, matching an independent backward-induction reference.
+- **Method:** European prices use a weighted terminal sum; American prices work backwards and compare continuation with early exercise. Standard library (`math`) only.
+- **Validation:** four textbook examples (4.49, 7.43, 53.39, 4.66) reproduce, and input checks include a no-arbitrage test on the up probability.
+- **Tests:** convergence to Black–Scholes, put–call parity, American ≥ European, and American call = European call without dividends.
 
-## Slides
-
-`Binomial Option Pricing.pptx` is the accompanying presentation (theory, worked examples and the implementation walkthrough).
-
-## Run the examples
-
-Python 3, from this folder:
+## Run
 
 ```sh
-python3 "Binomial Option Pricing.py"
-```
-
-Edit the calls under `if __name__ == "__main__":` at the bottom to try other inputs, or import `option` from the module. There is no CLI argument parser or CSV ingestion; the pandas idea in the source is only a comment.
-
-The routine validates its inputs (option kind, positive T, S, K, sigma, integer n, and a no-arbitrage check on the up probability). Discounting uses the risk-free rate `r` (the dividend yield `q` only enters the risk-neutral probability), and early exercise is checked according to the option kind (call or put).
-
-## Tests
-
-```sh
+python3 "Binomial Option Pricing.py"   # edit the calls under __main__ to try other inputs
 python3 -m unittest -v
 ```
 
-The tests (`test_option.py`) check the four textbook examples, convergence to Black–Scholes, put–call parity, American ≥ European, American call = European call when there are no dividends, and input validation.
+Slides: `Binomial Option Pricing.pptx`.
+
+## Limits
+
+No command-line interface or file input; inputs are function arguments. The dividend yield `q` only enters the risk-neutral probability.
