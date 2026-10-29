@@ -18,3 +18,5 @@ Slides: `Binomial Option Pricing.pptx`.
 ## Limits
 
 No command-line interface or file input; expiry and spot are inputs and strike, rates and volatility are function arguments. Discounting uses the risk-free rate `r`; the dividend yield `q` only enters the risk-neutral probability.
+
+[MIT licence](LICENSE)
